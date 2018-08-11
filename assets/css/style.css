@@ -790,3 +790,20 @@ span.badge {
 .collection .collection-item #happy:hover{
     color: blue;
 }
+
+#profile-img-settings{
+    width: 200px;
+}
+
+
+.loading-gif{
+    width: 100%;
+    opacity:.5;
+}
+
+#view-dashboard{
+    margin-top: -315px;
+    margin-left: 249px;
+    width: 70%;
+    height: 20%;
+}
