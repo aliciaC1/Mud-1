@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="shortcut icon" type="image/png" href="./assets/images/mudlogoblkwhite.png">
      <!--Import Google Icon Font-->
      <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
      <!-- Compiled and minified CSS -->
@@ -35,10 +36,11 @@
    </ul>
    <a href="#" data-target="slide-out" class="sidenav-trigger show-on-large btn-floating pulse"><i class="material-icons">menu</i></a>
 </div> 
+<img class ="movement2" src="./assets/images/3iRE.gif">
 <!--Body Content-->
 <div class="container">
-<h1>Settings</h1>
-<img class="circle responsive-img" id = "profile-img" src="./assets/images/profileblank.png"> <br>
+<h2>Settings</h2>
+<img class="circle responsive-img" id = "profile-img-settings" src="./assets/images/profileblank.png"> <br>
 
 <form action="#">
         <div class="file-field input-field">
@@ -65,12 +67,6 @@
           </div>
           <div class="row">
             <div class="input-field col s12">
-              <input disabled value="I am not editable" id="disabled" type="text" class="validate">
-              <label for="disabled">Disabled</label>
-            </div>
-          </div>
-          <div class="row">
-            <div class="input-field col s12">
               <input id="password" type="password" class="validate">
               <label for="password">Password</label>
             </div>
@@ -81,20 +77,125 @@
               <label for="email">Email</label>
             </div>
           </div>
-          <div class="row">
-            <div class="col s12">
-              This is an inline input field:
-              <div class="input-field inline">
-                <input id="email_inline" type="email" class="validate">
-                <label for="email_inline">Email</label>
-                <span class="helper-text" data-error="wrong" data-success="right">Helper text</span>
-              </div>
-            </div>
-          </div>
         </form>
       </div>
       <a class="waves-effect waves-teal btn-flat"><i class="material-icons right">autorenew</i>Update</a>
 </div>
+<!--#region Footer Content-->
+<!-- Modal Structure Terms & Conditions -->
+<div id="modal1" class="modal modal-fixed-footer">
+    <div class="modal-content">
+      <h4>Terms and Conditions</h4>
+      <!--Terms and conditions text-->
+      <p>Introduction
+        These Website Standard Terms and Conditions written on this webpage shall manage your use of our website, Müd accessible at Müd.com.
+        
+        These Terms will be applied fully and affect to your use of this Website. By using this Website, you agreed to accept all terms and conditions written in here. You must not use this Website if you disagree with any of these Website Standard Terms and Conditions.
+        
+        Minors or people below 18 years old are not allowed to use this Website.
+        
+        Intellectual Property Rights
+        Other than the content you own, under these Terms, Company Name and/or its licensors own all the intellectual property rights and materials contained in this Website.
+        
+        You are granted limited license only for purposes of viewing the material contained on this Website.
+        
+        Restrictions
+        You are specifically restricted from all of the following:
+        
+        publishing any Website material in any other media;
+        selling, sublicensing and/or otherwise commercializing any Website material;
+        publicly performing and/or showing any Website material;
+        using this Website in any way that is or may be damaging to this Website;
+        using this Website in any way that impacts user access to this Website;
+        using this Website contrary to applicable laws and regulations, or in any way may cause harm to the Website, or to any person or business entity;
+        engaging in any data mining, data harvesting, data extracting or any other similar activity in relation to this Website;
+        using this Website to engage in any advertising or marketing.
+        Certain areas of this Website are restricted from being access by you and Company Name may further restrict access by you to any areas of this Website, at any time, in absolute discretion. Any user ID and password you may have for this Website are confidential and you must maintain confidentiality as well.</p>
+    </div>
+    <div class="modal-footer">
+      <a href="#!" class="modal-close waves-effect waves-green btn-flat">Agree</a>
+    </div>
+  </div>         
+  <!-- Modal Structure Privacy Policy-->
+  <div id="modal2" class="modal modal-fixed-footer">
+      <div class="modal-content">
+        <h4>Privacy Policy</h4>
+        <p>
+          This Privacy Policy was last modified on August 11, 2018. 
+
+          Müd("us", "we", or "our") operates http://www.müd.com (the "Site"). This page informs you of our policies regarding the collection, use and disclousre of Personal Information we receive from our users of the Site. 
+          We use your Personal Information only for providing and improving the Site. By using the Site, you agree to the collection and use of information in accordance iwth this policy. 
+          <br>
+          Informaiton Collection and Use <br>
+          While using our Site, we may ask you to provie us with certain personally identifiable infomration that can be used to contact or identify you. personally identifiable information may include, but is not limited to your name ("Personal Information"). 
+          <br>
+          Log Data <br>
+          Like many site operators, we collect information that your browser sends whenever you visit our Site ("Log Data"). This Log Data may include information such as your computer's Internet 
+          Protocol ("IP") addres, browser type, browser version, the pages of our Site that you visit, the time and date of your visit, the time spent on those pages and other statistics. 
+        </p>
+      </div>
+      <div class="modal-footer">
+        <a href="#!" class="modal-close waves-effect waves-green btn-flat">Agree</a>
+      </div>
+    </div>
+  <!-- Modal Structure Contact form-->
+  <div id="modal3" class="modal modal-fixed-footer">
+      <div class="modal-content">
+        <h4>Contact</h4>
+        <div class="row">
+          <form class="col s12">
+            <div class="row">
+              <div class="input-field col s6">
+                <input placeholder="Placeholder" id="first_name" type="text" class="validate">
+                <label for="first_name">First Name</label>
+              </div>
+              <div class="input-field col s6">
+                <input id="last_name" type="text" class="validate">
+                <label for="last_name">Last Name</label>
+              </div>
+            </div>
+            <div class="row">
+              <div class="input-field col s12">
+                <input id="email" type="email" class="validate">
+                <label for="email">Email</label>
+              </div>
+            </div>          
+            <div class="row">
+              <div class="input-field col s12">
+                <textarea id="textarea1" class="materialize-textarea"></textarea>
+                <label for="textarea1">Textarea</label>
+              </div>
+        </div>
+          </form>
+        </div>     
+      </div>
+      <div class="modal-footer">
+        <a href="#!" class="modal-close waves-effect waves-green btn-flat">Submit</a>
+      </div>
+    </div>
+            
+<!--Footer-->
+<footer class="page-footer">
+    <div class="container">
+      <div class="row">
+        <div class="col l4 s12">
+          <h5 class="white-text"><img id="footer-img" src="./assets/images/mudlogowhite2.png"></h5>       
+        </div>
+        <div class="col l3 offset-l2 s12 footer-links">
+          <ul class="footer-ul">
+            <li><a class="grey-text text-lighten-3" href="./about.html">About Us</a></li>
+            <li><a class="grey-text text-lighten-3 modal-trigger" href="#modal1">Terms of Use</a></li>
+            <li><a class="grey-text text-lighten-3 modal-trigger" href="#modal2">Privacy Policy</a></li>
+            <li><a class="grey-text text-lighten-3 modal-trigger" href="#modal3">Contact</a></li>
+          </ul>        
+        </div>
+      </div>   
+      <div class="footer-copyright">      
+        Copyright © 2018 Müd Web Application & Design. All Rights Reserved.
+      </div>
+    </div>
+  </footer>
+<!--#endregion footer content-->
 
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
     <!-- Compiled and minified JavaScript -->

@@ -46,9 +46,8 @@
        <a href="#" data-target="slide-out" class="sidenav-trigger show-on-large btn-floating pulse"><i class="material-icons">menu</i></a>
   </div> 
 <!--Body Content-->
-
 <div class="container">
-   
+   <img class="loading-gif" src="./assets/images/loadingtriangle.gif">
 <div class = "#current-mood"></div>
 
 <div class="mood-container">
@@ -58,6 +57,17 @@
   
       <input id = "add-emo" type="submit" type="button" class="btn btn-outline-dark" value ="ADD emotion">
     </div> -->
+    <form action="#">
+        <div class="file-field input-field">
+          <div class="btn">
+            <span>File</span>
+            <input type="file" multiple>
+          </div>
+          <div class="file-path-wrapper">
+            <input class="file-path validate" type="text" placeholder="Upload one or more files">
+          </div>
+        </div>
+      </form>
     <div class="resizeDiv"></div>
     <div class="date-resize">
        <h1 id ="month">August </h1>  <hr>
@@ -215,7 +225,5 @@
   async defer></script>
   
 <script src="./assets/js/mood.js"></script>
-<script src="./assets/js/moodFaceImage.js"></script>
-
 </body>
 </html>

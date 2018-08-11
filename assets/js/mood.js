@@ -361,7 +361,7 @@ $(document).ready(function(){
   M.AutoInit();
 // #endregion materalize 
 // #region Mood Board Draggable / resizeable functions 
- 
+ $('.mood-container').hide();
     $('.resizeDiv')
 	.draggable()
   .resizable();
@@ -503,7 +503,8 @@ $( window ).on( "load", function() {
     // window.location.replace("./mood.html");
     findMaxMood(currentMood);
     console.log(mainEmotion);
-    alert("your mood is " + mainEmotion);
+    $('.loading-gif').hide();
+    $('.mood-container').show();
 
 
 

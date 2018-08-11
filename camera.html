@@ -39,18 +39,7 @@
      <a href="#" data-target="slide-out" class="sidenav-trigger show-on-large btn-floating pulse"><i class="material-icons">menu</i></a>
 </div>  
 <!--Body Content-->
-
-<div class="fixed-action-btn">
-        <a class="btn-floating btn-large red">
-            <i class="large material-icons">mode_edit</i>
-        </a>
-        <ul>
-            <li><a class="btn-floating red"><i class="material-icons">insert_chart</i></a></li>
-            <li><a class="btn-floating yellow darken-1"><i class="material-icons">format_quote</i></a></li>
-            <li><a class="btn-floating green"><i class="material-icons">publish</i></a></li>
-            <li><a class="btn-floating blue"><i class="material-icons">attach_file</i></a></li>
-        </ul>
-    </div>
+<img class ="movement2" src="./assets/images/3iRE.gif">
 
     <div class="container">
         <div id="detector" class="detector">
@@ -81,20 +70,20 @@
 
             <div class="output-section col s6" style="margin:0px;">
                     <div class="canvas-wrapper">
-                        <canvas width="560" height="280" class="canvas"></canvas>
-                        <div class="faces"></div>
+                        <canvas style = "background-color: #000000;" width="560" height="280" class="canvas"></canvas>
+                        <div class="faces" style=" width: 580px; height: 280px;"></div>
                     </div>
                 </div>
             </div>
 
             <div class="camera-modal">
-                <video autoplay width="500" height="375"></video>
+                <video autoplay width="560" height="380"></video>
                 <a class="btn capture" href="#">Capture</a>
             </div>
         </div>        
     </div>
-
-    <div class="row galleryRow">
+    <button id="view-dashboard" class= "waves-effect waves-yellow accent-3 btn-flat" href>View Your Müd Board</button>
+    <div class="row galleryRow" style="margin:10px;">
         <!-- <div class="col s12 m2">
           <div class="card">
             <div class="card-image">
@@ -105,37 +94,126 @@
         </div> -->
         <!-- THIS IS WHERE NEW GALLERY DIVS GET APPENDED TOO -->
     </div>
-    <button id="view-dashboard" href>View Your DashBoard</button>
 
 
+
+
+<!--#region Footer Content-->
+<!-- Modal Structure Terms & Conditions -->
+<div id="modal1" class="modal modal-fixed-footer">
+        <div class="modal-content">
+          <h4>Terms and Conditions</h4>
+          <!--Terms and conditions text-->
+          <p>Introduction
+            These Website Standard Terms and Conditions written on this webpage shall manage your use of our website, Müd accessible at Müd.com.
+            
+            These Terms will be applied fully and affect to your use of this Website. By using this Website, you agreed to accept all terms and conditions written in here. You must not use this Website if you disagree with any of these Website Standard Terms and Conditions.
+            
+            Minors or people below 18 years old are not allowed to use this Website.
+            
+            Intellectual Property Rights
+            Other than the content you own, under these Terms, Company Name and/or its licensors own all the intellectual property rights and materials contained in this Website.
+            
+            You are granted limited license only for purposes of viewing the material contained on this Website.
+            
+            Restrictions
+            You are specifically restricted from all of the following:
+            
+            publishing any Website material in any other media;
+            selling, sublicensing and/or otherwise commercializing any Website material;
+            publicly performing and/or showing any Website material;
+            using this Website in any way that is or may be damaging to this Website;
+            using this Website in any way that impacts user access to this Website;
+            using this Website contrary to applicable laws and regulations, or in any way may cause harm to the Website, or to any person or business entity;
+            engaging in any data mining, data harvesting, data extracting or any other similar activity in relation to this Website;
+            using this Website to engage in any advertising or marketing.
+            Certain areas of this Website are restricted from being access by you and Company Name may further restrict access by you to any areas of this Website, at any time, in absolute discretion. Any user ID and password you may have for this Website are confidential and you must maintain confidentiality as well.</p>
+        </div>
+        <div class="modal-footer">
+          <a href="#!" class="modal-close waves-effect waves-green btn-flat">Agree</a>
+        </div>
+      </div>         
+      <!-- Modal Structure Privacy Policy-->
+      <div id="modal2" class="modal modal-fixed-footer">
+          <div class="modal-content">
+            <h4>Privacy Policy</h4>
+            <p>
+              This Privacy Policy was last modified on August 11, 2018. 
+    
+              Müd("us", "we", or "our") operates http://www.müd.com (the "Site"). This page informs you of our policies regarding the collection, use and disclousre of Personal Information we receive from our users of the Site. 
+              We use your Personal Information only for providing and improving the Site. By using the Site, you agree to the collection and use of information in accordance iwth this policy. 
+              <br>
+              Informaiton Collection and Use <br>
+              While using our Site, we may ask you to provie us with certain personally identifiable infomration that can be used to contact or identify you. personally identifiable information may include, but is not limited to your name ("Personal Information"). 
+              <br>
+              Log Data <br>
+              Like many site operators, we collect information that your browser sends whenever you visit our Site ("Log Data"). This Log Data may include information such as your computer's Internet 
+              Protocol ("IP") addres, browser type, browser version, the pages of our Site that you visit, the time and date of your visit, the time spent on those pages and other statistics. 
+            </p>
+          </div>
+          <div class="modal-footer">
+            <a href="#!" class="modal-close waves-effect waves-green btn-flat">Agree</a>
+          </div>
+        </div>
+      <!-- Modal Structure Contact form-->
+      <div id="modal3" class="modal modal-fixed-footer">
+          <div class="modal-content">
+            <h4>Contact</h4>
+            <div class="row">
+              <form class="col s12">
+                <div class="row">
+                  <div class="input-field col s6">
+                    <input placeholder="Placeholder" id="first_name" type="text" class="validate">
+                    <label for="first_name">First Name</label>
+                  </div>
+                  <div class="input-field col s6">
+                    <input id="last_name" type="text" class="validate">
+                    <label for="last_name">Last Name</label>
+                  </div>
+                </div>
+                <div class="row">
+                  <div class="input-field col s12">
+                    <input id="email" type="email" class="validate">
+                    <label for="email">Email</label>
+                  </div>
+                </div>          
+                <div class="row">
+                  <div class="input-field col s12">
+                    <textarea id="textarea1" class="materialize-textarea"></textarea>
+                    <label for="textarea1">Textarea</label>
+                  </div>
+            </div>
+              </form>
+            </div>     
+          </div>
+          <div class="modal-footer">
+            <a href="#!" class="modal-close waves-effect waves-green btn-flat">Submit</a>
+          </div>
+        </div>
+                
+    <!--Footer-->
     <footer class="page-footer">
         <div class="container">
-            <div class="row">
-            <div class="col l6 s12">
-                <h5 class="white-text">Footer Content</h5>
-                <p class="grey-text text-lighten-4">You can use rows and columns here to organize your footer content.</p>
+          <div class="row">
+            <div class="col l4 s12">
+              <h5 class="white-text"><img id="footer-img" src="./assets/images/mudlogowhite2.png"></h5>       
             </div>
-            <div class="col l4 offset-l2 s12">
-                <h5 class="white-text">Links</h5>
-                <ul>
-                <li><a class="grey-text text-lighten-3" href="#!">Link 1</a></li>
-                <li><a class="grey-text text-lighten-3" href="#!">Link 2</a></li>
-                <li><a class="grey-text text-lighten-3" href="#!">Link 3</a></li>
-                <li><a class="grey-text text-lighten-3" href="#!">Link 4</a></li>
-                </ul>
+            <div class="col l3 offset-l2 s12 footer-links">
+              <ul class="footer-ul">
+                <li><a class="grey-text text-lighten-3" href="./about.html">About Us</a></li>
+                <li><a class="grey-text text-lighten-3 modal-trigger" href="#modal1">Terms of Use</a></li>
+                <li><a class="grey-text text-lighten-3 modal-trigger" href="#modal2">Privacy Policy</a></li>
+                <li><a class="grey-text text-lighten-3 modal-trigger" href="#modal3">Contact</a></li>
+              </ul>        
             </div>
-            </div>
+          </div>   
+          <div class="footer-copyright">      
+            Copyright © 2018 Müd Web Application & Design. All Rights Reserved.
+          </div>
         </div>
-        <div class="footer-copyright">
-            <div class="container">
-            © 2014 Copyright Text
-            <a class="grey-text text-lighten-4 right" href="#!">More Links</a>
-            </div>
-        </div>
-    </footer>
-
-
-
+      </footer>
+    <!--#endregion footer content-->
+    
     <script src="vendor/jquery-1.8.2.min.js"></script>
     <script src="vendor/qtip/jquery.qtip.min.js"></script>
     <script src="vendor/rainbow/rainbow.min.js"></script>
