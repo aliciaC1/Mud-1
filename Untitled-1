@@ -1,0 +1,210 @@
+$(document).ready(function() {
+
+
+
+
+var i = 0;
+
+function setContent(){
+
+    var emoArray = [{
+        emotion: "Happiness", 
+        bckColor: "#FFC107", 
+        gif: "happy", 
+        maps: "night_club", 
+        songArray: ["https://open.spotify.com/embed?uri=spotify:playlist:37i9dQZF1DX6Rl8uES4jYu", "https://open.spotify.com/embed?uri=spotify:playlist:37i9dQZF1DX9XIFQuFvzM4", "https://open.spotify.com/embed?uri=spotify:playlist:37i9dQZF1DX6Rl8uES4jYu"],  
+        videoArray: [1, 2, 3], 
+        quoteArray:['“No medicine cures what happiness cannot.” ― Gabriel García Márquez', '"Happiness Looks Gorgeous On You"', '"Happiness is the highest level of Success"'], 
+    }, {
+        emotion: "Sadness", 
+        bckColor: "#006ded", 
+        gif: "sad", 
+        maps: "bar", 
+        songSelect:["https://open.spotify.com/embed?uri=spotify:playlist:37i9dQZF1DXbvABJXBIyiY", "https://open.spotify.com/embed?uri=spotify:playlist:37i9dQZF1DX6xZZEgC9Ubl", "https://open.spotify.com/embed?uri=spotify:playlist:37i9dQZF1DWVV27DiNWxkR"],  
+        videoArray: [1, 2, 3],  
+        quoteArray:['“You cannot be happy unless you are unhappy sometimes.” ― Lauren Oliver, Delirium', '"Heavy hearts, like heavy clouds in the sky, are best relieved by the letting of a little water." - Christopher Morley', '"First, accept sadness. Realize that without losing, winning is not so great."-Alyssa Milano'], 
+    }, {
+        emotion: "Anger", 
+        bckColor: "#c81d11", 
+        gif: "angry", 
+        maps: "gym", 
+        songArray: ["https://open.spotify.com/embed?uri=spotify:playlist:37i9dQZF1DWYMvTygsLWlG", "https://open.spotify.com/embed?uri=spotify:playlist:37i9dQZF1DWSqBruwoIXkA", "https://open.spotify.com/embed?uri=spotify:playlist:37i9dQZF1DX2pSTOxoPbx9"],  
+        videoArray: [1, 2, 3], 
+        quoteArray:['"He who angers you conquers you." -Elizabeth Kenny', '"Whatever is begun in anger ends in shame." - Benjamin Franklin', '"The opposite of anger is not calmness, its empathy." - Mehmet Oz'],
+    }]
+        
+    
+        // showContent(emoArray) {
+    
+        //     var songSelect = emoArray.songArray[Math.floor(Math.random()* songArray.length)];
+        //     var videoSelect = emoArray.videoArray[Math.floor(Math.random()* videoArray.length)];
+        //     var quoteSelect = emoArray.quoteArray[Math.floor(Math.random()* quoteArray.length)];
+    
+        //     gifSearch = gif[i]; 
+        //     mapSearch = maps [i];
+        //     $('#emotionTitle').text(emoArray.emotion);
+        //     $('body').css("background-color", emoArray.bckColor);
+        //     $('#songPlaylist').attr('src', "url(" +emoArray.songSelect + ")");
+        //     $('#videoPlaylist').attr('src', "url(" + emoArray.videoSelect + ")");
+        //     $('#quote').text(emoArray.quoteSelect);
+        // });
+    
+    
+        // showContent(emoArray[i]) {
+    
+        //     var songSelect = emoArray[i].songArray[Math.floor(Math.random()* songArray.length)];
+        //     var videoSelect = emoArray[i].videoArray[Math.floor(Math.random()* videoArray.length)];
+        //     var quoteSelect = emoArray[i].quoteArray[Math.floor(Math.random()* quoteArray.length)];
+            
+        //     gifSearch = gif[i]; 
+        //     mapSearch = maps [i];
+        //     $('#emotionTitle').text(emoArray[i].emotion);
+        //     $('body').css("background-color", emoArray[i].bckColor);
+        //     $('#songPlaylist').attr('src', "url(" +emoArray[i].songSelect + ")");
+        //     $('#videoPlaylist').attr('src', "url(" + emoArray[i].videoSelect + ")");
+        //     $('#quote').text(emoArray[i].quoteSelect);
+        // }
+    
+    // showing content per emotion Switch Statment 
+    if (mainEmotion === 'happiness') {
+        // var songSelect = emoArray[0].songArray[Math.floor(Math.random()* songArray.length)];
+        //     var videoSelect = emoArray[0].videoArray[Math.floor(Math.random()* videoArray.length)];
+        //     var quoteSelect = emoArray[0].quoteArray[Math.floor(Math.random()* quoteArray.length)];
+            
+            gifSearch = emoArray[0].gif 
+            mapSearch = emoArray[0].maps
+            $('#emotionTitle').text(emoArray[0].emotion);
+            $('body').css("background-color", emoArray[0].bckColor);
+            $('#songPlaylist').attr('src', "url('" +emoArray[0].songSelect[0] + "')");
+            $('#videoPlaylist').attr('src', "url(" + emoArray[0].videoSelect + ")");
+            $('#quote').text(emoArray[0].quoteSelect);
+            $('#happyMaps').show();
+            $('#happyGifs').show();  
+         } else if (mainEmotion ==='sadness'){
+        //    songSelect = emoArray[1].songArray[Math.floor(Math.random()* songArray.length)];
+        //    videoSelect = emoArray[1].videoArray[Math.floor(Math.random()* videoArray.length)];
+        //     quoteSelect = emoArray[1].quoteArray[Math.floor(Math.random()* quoteArray.length)];
+            
+            gifSearch = emoArray[1].gif
+            mapSearch = emoArray[1].maps
+            $('#emotionTitle').text(emoArray[1].emotion);
+            $('body').css("background-color", emoArray[1].bckColor);
+            $('#songPlaylist').attr('src', "url(" +emoArray[1].songSelect + ")");
+            $('#videoPlaylist').attr('src', "url(" + emoArray[1].videoSelect + ")");
+            $('#quote').text(emoArray[1].quoteSelect);
+            $('#happyMaps').show();
+            $('#happyGifs').show(); 
+         } else {
+        //     songSelect = emoArray[2].songArray[Math.floor(Math.random()* songArray.length)];
+        //    videoSelect = emoArray[2].videoArray[Math.floor(Math.random()* videoArray.length)];
+        //     quoteSelect = emoArray[2].quoteArray[Math.floor(Math.random()* quoteArray.length)];
+            
+            gifSearch = emoArray[2].gif;
+            mapSearch = emoArray[2].maps;
+            $('#emotionTitle').text(emoArray[2].emotion);
+            $('body').css("background-color", emoArray[2].bckColor);
+            $('#songPlaylist').attr('src', "url(" +emoArray[2].songSelect + ")");
+            $('#videoPlaylist').attr('src', "url(" + emoArray[2].videoSelect + ")");
+            $('#quote').text(emoArray[2].quoteSelect);
+            $('#happyMaps').show();
+            $('#happyGifs').show(); 
+         };
+       
+        // case 'fear': 
+        //     showContent(emoArray[2]);
+        //     $('#fearMaps').show();
+        //     $('#fearGifs').show();  
+        //     break;
+        // case 'digust':
+        //     showContent(emoArray[4]);
+        //     $('#disgustMaps').show();
+        //     $('#disgustGifs').show(); 
+        //     break;
+        // case 'surprise':
+        //     showContent(emoArray[5]);
+        //     $('#surpriseMaps').show();
+        //     $('#surpsiseGifs').show(); 
+        //     break;
+}
+
+
+$("#add-film").on("click", function(event) {
+    event.preventDefault();
+    // This line grabs the input from the textbox
+    var mainEmotion = $("#emo-input").val().trim();
+
+    $(".date-resize").text("You are " + mainEmotion);
+    console.log(mainEmotion);
+    var emoArray = [{
+        emotion: "Happiness", 
+        bckColor: "#FFC107", 
+        gif: "happy", 
+        maps: "night_club", 
+        songArray: ["https://open.spotify.com/embed?uri=spotify:playlist:37i9dQZF1DX6Rl8uES4jYu", "https://open.spotify.com/embed?uri=spotify:playlist:37i9dQZF1DX9XIFQuFvzM4", "https://open.spotify.com/embed?uri=spotify:playlist:37i9dQZF1DX6Rl8uES4jYu"],  
+        videoArray: [1, 2, 3], 
+        quoteArray:['“No medicine cures what happiness cannot.” ― Gabriel García Márquez', '"Happiness Looks Gorgeous On You"', '"Happiness is the highest level of Success"'], 
+    }, {
+        emotion: "Sadness", 
+        bckColor: "#006ded", 
+        gif: "sad", 
+        maps: "bar", 
+        songArray:["https://open.spotify.com/embed?uri=spotify:playlist:37i9dQZF1DXbvABJXBIyiY", "https://open.spotify.com/embed?uri=spotify:playlist:37i9dQZF1DX6xZZEgC9Ubl", "https://open.spotify.com/embed?uri=spotify:playlist:37i9dQZF1DWVV27DiNWxkR"],  
+        videoArray: [1, 2, 3],  
+        quoteArray:['“You cannot be happy unless you are unhappy sometimes.” ― Lauren Oliver, Delirium', '"Heavy hearts, like heavy clouds in the sky, are best relieved by the letting of a little water." - Christopher Morley', '"First, accept sadness. Realize that without losing, winning is not so great."-Alyssa Milano'], 
+    }, {
+        emotion: "Anger", 
+        bckColor: "#c81d11", 
+        gif: "angry", 
+        maps: "gym", 
+        songArray: ["https://open.spotify.com/embed?uri=spotify:playlist:37i9dQZF1DWYMvTygsLWlG", "https://open.spotify.com/embed?uri=spotify:playlist:37i9dQZF1DWSqBruwoIXkA", "https://open.spotify.com/embed?uri=spotify:playlist:37i9dQZF1DX2pSTOxoPbx9"],  
+        videoArray: [1, 2, 3], 
+        quoteArray:['"He who angers you conquers you." -Elizabeth Kenny', '"Whatever is begun in anger ends in shame." - Benjamin Franklin', '"The opposite of anger is not calmness, its empathy." - Mehmet Oz'],
+    }]
+    if (mainEmotion === 'happiness') {
+     
+        //     var videoSelect = emoArray[0].videoArray[Math.floor(Math.random()* videoArray.length)];
+        //     var quoteSelect = emoArray[0].quoteArray[Math.floor(Math.random()* quoteArray.length)];
+            
+            // gifSearch = gif[0]; 
+            // mapSearch = maps [0];
+            $('#emotionTitle').text(emoArray[0].emotion);
+            $('body').css("background-color", emoArray[0].bckColor);
+            $('#spotify-player').attr('src', "url('" + emoArray[0].songSelect + "')");
+            $('#videoPlaylist').attr('src', "url(" + emoArray[0].videoSelect + ")");
+            $('#quote').text(emoArray[0].quoteSelect);
+            $('#happyMaps').show();
+            $('#happyGifs').show();  
+         } else if (mainEmotion ==='sadness'){
+        //    songSelect = emoArray[1].songArray[Math.floor(Math.random()* songArray.length)];
+        //    videoSelect = emoArray[1].videoArray[Math.floor(Math.random()* videoArray.length)];
+        //     quoteSelect = emoArray[1].quoteArray[Math.floor(Math.random()* quoteArray.length)];
+            
+            // gifSearch = gif[1]; 
+            // mapSearch = maps [1];
+            $('#emotionTitle').text(emoArray[1].emotion);
+            $('body').css("background-color", emoArray[1].bckColor);
+            $('#songPlaylist').attr('src', "url(" +emoArray[1].songSelect + ")");
+            $('#videoPlaylist').attr('src', "url(" + emoArray[1].videoSelect + ")");
+            $('#quote').text(emoArray[1].quoteSelect);
+            $('#happyMaps').show();
+            $('#happyGifs').show(); 
+         } else {
+        //     songSelect = emoArray[2].songArray[Math.floor(Math.random()* songArray.length)];
+        //    videoSelect = emoArray[2].videoArray[Math.floor(Math.random()* videoArray.length)];
+        //     quoteSelect = emoArray[2].quoteArray[Math.floor(Math.random()* quoteArray.length)];
+            
+            // gifSearch = gif[2]; 
+            // mapSearch = maps [2];
+            $('#emotionTitle').text(emoArray[2].emotion);
+            $('body').css("background-color", emoArray[2].bckColor);
+            $('#songPlaylist').attr('src', "url(" +emoArray[2].songSelect + ")");
+            $('#videoPlaylist').attr('src', "url(" + emoArray[2].videoSelect + ")");
+            $('#quote').text(emoArray[2].quoteSelect);
+            $('#happyMaps').show();
+            $('#happyGifs').show(); 
+         };
+
+  });
+
+ 
+});

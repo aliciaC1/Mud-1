@@ -1,0 +1,221 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+     <!--Import Google Icon Font-->
+     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+     <!-- Compiled and minified CSS -->
+     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0-rc.2/css/materialize.min.css">
+     <script
+     src="https://code.jquery.com/jquery-3.1.1.min.js"
+     integrity="sha256-hVVnYaiADRTO2PzUGmuLJr8BLUSjGIZsDYGmIJLv2b8="
+     crossorigin="anonymous"></script>
+  
+     <script type="text/javascript" 
+	src="http://ajax.googleapis.com/ajax/libs/jquery/1.3.2/jquery.min.js"></script>
+<script type="text/javascript" 
+	src="http://ajax.googleapis.com/ajax/libs/jqueryui/1.7.2/jquery-ui.js"></script>
+<link rel="stylesheet" type="text/css" 
+  href="http://ajax.googleapis.com/ajax/libs/jqueryui/1.7.1/themes/base/jquery-ui.css"/>
+  <script src="https://www.gstatic.com/firebasejs/4.12.0/firebase.js"></script>
+  
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.2.0/css/all.css" integrity="sha384-hWVjflwFxL6sNzntih27bfxkr27PmbbK/iSvJ+a4+0owXq79v+lsFkW54bOGbiDQ" crossorigin="anonymous">
+     <link href="./assets/css/style.css" rel="stylesheet">
+    <title>Document</title>
+</head>
+<body>
+<!--heading bar--> 
+<div class ="head-nav">
+        <a href="#" class="brand-logo"><img id ="logo-img"src="./assets/images/mudlogowhite2.png"></a>
+       <ul id="slide-out" class="sidenav">
+          <li class = "user-display">  <img class="circle responsive-img" id = "profile-img" src="./assets/images/profileblank.png"> <br>
+          <h6 id ="user-name">User Name</h6>
+          <hr>
+          </li>
+          <li><a href="profile.html"><i class ="small material-icons">account_circle</i>Profile</a></li>
+          <li><a href="mood.html"><i class ="small material-icons">face</i>Today's Müd Board</a></li>
+          <li><a href="photolog.html"><i class ="small material-icons">collections</i>Photo Log</a></li>
+          <li><a href="camera.html"><i class ="small material-icons">camera_alt</i>Camera</a></li>
+          <li><a href="settings.html">  <i class="small material-icons">settings</i> Settings</a></li>
+          <li><a href="about.html"><i class="small material-icons">info_outline</i>About Us</a></li>
+          <li><a href="index.html"><i class="small material-icons">clear</i>Log Out</a></li>
+          <li><img id ="logo-sideimg" src="./assets/images/mudlogowhite2.png"></li>
+       </ul>
+       <a href="#" data-target="slide-out" class="sidenav-trigger show-on-large btn-floating pulse"><i class="material-icons">menu</i></a>
+  </div> 
+<!--Body Content-->
+
+<div class="container">
+   
+<div class = "#current-mood"></div>
+
+<div class="mood-container">
+ 
+  <img class ="movement" src="./assets/images/3iRE.gif">
+  <!-- <div class="input-field">
+  
+      <input id = "add-emo" type="submit" type="button" class="btn btn-outline-dark" value ="ADD emotion">
+    </div> -->
+    <div class="resizeDiv"></div>
+    <div class="date-resize">
+       <h1 id ="month">August </h1>  <hr>
+        <h1 id ="day">4th</h1>
+       <hr>
+       <h1 id ="year">2018</h1>
+      </div>
+
+    <div id="resize-todayImg">
+            <div style="text-align: center;margin: 0;height:inherit;">    
+            <img id = "todayImg" src="">
+      </div>
+    </div>
+<!--#region Google Maps-->
+<div class = "map-resize">
+<div class = "map-container">
+
+    <div id="locationField">
+        <input id="autocomplete" placeholder="Enter your Location" type="text" />
+      </div>
+
+    <div id="controls">
+      <select id="country">
+        <option value="all">All</option>
+        <option value="au">Australia</option>
+        <option value="br">Brazil</option>
+        <option value="ca">Canada</option>
+        <option value="fr">France</option>
+        <option value="de">Germany</option>
+        <option value="mx">Mexico</option>
+        <option value="nz">New Zealand</option>
+        <option value="it">Italy</option>
+        <option value="za">South Africa</option>
+        <option value="es">Spain</option>
+        <option value="pt">Portugal</option>
+        <option value="us" selected>U.S.A.</option>
+        <option value="uk">United Kingdom</option>
+      </select>
+    </div>
+
+    <div id="map"></div>
+
+    <div id="listing">
+      <table id="resultsTable">
+        <tbody id="results"></tbody>
+      </table>
+    </div>
+
+    <div style="display: none">
+      <div id="info-content">
+        <table>
+          <tr id="iw-url-row" class="iw_table_row">
+            <td id="iw-icon" class="iw_table_icon"></td>
+            <td id="iw-url"></td>
+          </tr>
+          <tr id="iw-address-row" class="iw_table_row">
+            <td class="iw_attribute_name">Address:</td>
+            <td id="iw-address"></td>
+          </tr>
+          <tr id="iw-phone-row" class="iw_table_row">
+            <td class="iw_attribute_name">Telephone:</td>
+            <td id="iw-phone"></td>
+          </tr>
+          <tr id="iw-rating-row" class="iw_table_row">
+            <td class="iw_attribute_name">Rating:</td>
+            <td id="iw-rating"></td>
+          </tr>
+          <tr id="iw-website-row" class="iw_table_row">
+            <td class="iw_attribute_name">Website:</td>
+            <td id="iw-website"></td>
+          </tr>
+        </table>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!--#endregion google maps-->
+
+ 
+        
+
+       
+        <div class="music-resize">
+            <div style="text-align: center;margin: 0;height:inherit;">    
+        <iframe id ="spotify-player" src="https://open.spotify.com/embed?uri=spotify:playlist:37i9dQZF1DX6xZZEgC9Ubl" width="300" height="380" frameborder="0" allowtransparency="true" allow="encrypted-media"></iframe>
+      </div>
+      </div>
+
+
+      <div class="quote-resize">
+          <div style="text-align: center;margin: 0;height:inherit; width: inherit;"> 
+            <h3 id ="quote">"Happiness radiates like the fragrance from a flower and draws all good things towards you. Maharishi Mahesh Yogi"</h3>       
+      </div>
+      </div>
+   
+
+      <div class="text-resize">   
+              <form>
+                  <div class="input-field">
+                    <textarea id="add-comment" class="materialize-textarea"></textarea>
+                    <label for="textarea1">How are you feeling today?</label>
+                  </div>
+          <button id = 'add-comment' class="btn waves-effect waves-light" type="submit" name="action">Submit
+              <i class="material-icons right">send</i>
+            </button>
+              </form>         
+         </div>
+
+      
+
+      <div class = "tags-resize">
+      <div class="chips">
+        <input class="custom-class" id="add-tags">
+      </div>
+    </div>
+            
+      <div class="fixed-action-btn">
+        <a class="btn-floating btn-large red lighten-1">
+          <i class="large material-icons">apps</i>
+        </a>
+        <ul>
+          <li><a class="btn-floating yellow accent-4"><i class="material-icons">file_download</i></a></li>
+          <li><a class="btn-floating deep-purple accent-3"><i class="fab fa-instagram"></i></a></li>
+          <li><a class="btn-floating light-blue accent-1"><i class="fab fa-twitter"></i></a></li>
+          <li><a class="btn-floating blue darken-4 social"><i class="fab fa-facebook-f"></i> Sign in with facebook</a></a></li>
+  
+        </ul>
+      </div>
+          
+      <div class = "video-resize">
+        <div style="text-align: center;margin: 0;width:inherit; width: inherit;"></div>
+        
+      <ul id="tabs-swipe-demo" class="tabs">
+          <li class="tab col s3"><a href="#test-swipe-1">YT Player</a></li>
+          <li class="tab col s3"><a class="active" href="#test-swipe-2">Additional Videos</a></li>
+        </ul>
+        <div id="test-swipe-1" class="blue"> <div class="player"><!-- YouTube player appears here --> </div></div>
+        <div id="test-swipe-2" class="red"><div class="part-two"></div></div>
+    </div> 
+
+      </div>
+</div>
+          
+
+
+</div>
+<div class ="b-container"></div>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <!-- Compiled and minified JavaScript -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0-rc.2/js/materialize.min.js"></script>  
+  <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
+  <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+  <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDVhGEXnYQnjegO2k_pS1kn1kN2lw49_6U&libraries=places&callback=initMap"
+  async defer></script>
+  
+<script src="./assets/js/mood.js"></script>
+<script src="./assets/js/moodFaceImage.js"></script>
+
+</body>
+</html>

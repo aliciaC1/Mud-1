@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8">
+    <title>FirebaseUI Auth Demo</title>
+    <link rel="manifest" href="manifest.json">
+    <script src="https://www.gstatic.com/firebasejs/5.0/firebase.js"></script>
+    <script src="public/sample-config.js"></script>
+    <script src="public/common.js"></script>
+    <link href="public/style.css" rel="stylesheet" type="text/css" media="screen" />
+    <!-- <script src="dist/firebaseui.js"></script>
+    <link type="text/css" rel="stylesheet" href="dist/firebaseui.css" /> -->
+    <script src="https://cdn.firebase.com/libs/firebaseui/3.2.0/firebaseui.js"></script>
+    <link type="text/css" rel="stylesheet" href="https://cdn.firebase.com/libs/firebaseui/3.2.0/firebaseui.css"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="shortcut icon" type="image/png" href="./assets/images/mudlogoblkwhite.png">
+    <!--Import Google Icon Font-->
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <script src="https://use.fontawesome.com/fc6b1f5629.js"></script>
+    <!-- Compiled and minified CSS -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0-rc.2/css/materialize.min.css">
+    <script src="https://code.jquery.com/jquery-3.1.1.min.js" integrity="sha256-hVVnYaiADRTO2PzUGmuLJr8BLUSjGIZsDYGmIJLv2b8=" crossorigin="anonymous"></script>
+    <link href="./assets/css/style.css" rel="stylesheet">
+  </head>
+  <body>
+      <img class ="movement2" src="./assets/images/3iRE.gif">
+    <div id="container">
+    <img id ="logo-index"src="./assets/images/mudlogowhite2.png">
+    <h4><STRONG>Müd : <em>/myːt/</em></STRONG></h4>
+    <h5>
+        A web application that enables users to keep a visual emotional diary of their daily emotions through photos, tags and comments.
+        We offer curated media content based on user's emotional data to offer a more interactive, unique user experience. </h5>
+        <br>
+      <div id="loading">Loading...</div>
+      <div id="loaded" class="hidden">
+        <div id="main">
+          <div id="user-signed-in" class="hidden">
+            <div id="user-info">
+              <div id="photo-container">
+                <img id="photo">
+              </div>
+              <div id="name"></div>
+              <div id="email"></div>
+              <div id="phone"></div>
+              <div id="is-new-user"></div>
+              <div class="clearfix"></div>
+            </div>
+            <p>
+              <button id="sign-out">Sign Out</button>
+              <button id="delete-account">Delete account</button>
+            </p>
+          </div>
+          <div id="user-signed-out" class="hidden">
+            <h4>You are signed out.</h4>
+            
+            <div id="firebaseui-spa">
+            
+              <div id="firebaseui-container"></div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <script src="public/app.js"></script>
+  </body>
+</html>

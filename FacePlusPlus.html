@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+        <title>MüD</title>
+        <!-- <input type="file" accept="image/*" capture="camera" /> -->
+        <meta name="viewport" content="width=device-width">
+        <link rel="stylesheet" href="vendor/normalize.css">
+        <link rel="stylesheet" href="vendor/qtip/jquery.qtip.min.css">
+        <link rel="stylesheet" href="vendor/rainbow/themes/tricolore.css">
+        <link rel="stylesheet" href="dist/css/detect.min.css">
+        <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0-rc.2/css/materialize.min.css">
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+        <script src="https://www.gstatic.com/firebasejs/5.3.0/firebase.js"></script>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    </head>
+    <body>
+
+        <!-- Floating Action Button -->
+        <nav>
+            <div class="nav-wrapper">
+                <a href="#!" class="brand-logo" style="margin-left: 20px">MüD</a>
+                <a href="#" data-target="mobile-demo" class="sidenav-trigger"><i class="material-icons">menu</i></a>
+                <ul class="right hide-on-med-and-down">
+                    <li><a href="sass.html">Sass</a></li>
+                    <li><a href="badges.html">Components</a></li>
+                    <li><a href="collapsible.html">Javascript</a></li>
+                    <li><a href="mobile.html">Mobile</a></li>
+                </ul>
+            </div>
+        </nav>
+
+        <div class="progress">
+            <div class="indeterminate"></div>
+        </div>
+    
+        <ul class="sidenav" id="mobile-demo">
+            <li><a href="sass.html">Sass</a></li>
+            <li><a href="badges.html">Components</a></li>
+            <li><a href="collapsible.html">Javascript</a></li>
+            <li><a href="mobile.html">Mobile</a></li>
+        </ul>
+
+        <div class="fixed-action-btn">
+            <a class="btn-floating btn-large red">
+                <i class="large material-icons">mode_edit</i>
+            </a>
+            <ul>
+                <li><a class="btn-floating red"><i class="material-icons">insert_chart</i></a></li>
+                <li><a class="btn-floating yellow darken-1"><i class="material-icons">format_quote</i></a></li>
+                <li><a class="btn-floating green"><i class="material-icons">publish</i></a></li>
+                <li><a class="btn-floating blue"><i class="material-icons">attach_file</i></a></li>
+            </ul>
+        </div>
+
+        <div class="container">
+            <div id="detector" class="detector">
+                <div class="input-bar" style="width:100%">
+                    <div class="input-form-wrapper" style="width:100%">
+                        <a class="btn upload-file-wrapper" href="#" style="margin-left:10px;">
+                            Upload
+                            <input type="file" class="upload-file" />
+                        </a>
+                        <a class="btn webcam"><i class="icon-webcam"></i></a>
+                        <a class="mainEmotionLabel" style="text-align: right; float: right; color:black;
+                            font-size: 18px; font-weight: bold;"></a>
+                    </div>
+                </div>
+
+                <div class="row">
+                    <div class="col s12" style="padding: 0px;">
+                        <ul class="collection">
+                             <li class="collection-item happiness">happiness: 0.0</li>
+                            <li class="collection-item sadness">sadness: 0.0</li>
+                            <li class="collection-item fear">fear: 0.0</li>
+                            <li class="collection-item anger">anger: 0.0</li>
+                            <li class="collection-item disgust">disgust: 0.0</li>
+                            <li class="collection-item surprise">surprise: 0.0</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="output-section" style="margin:0px;">
+                        <div class="canvas-wrapper">
+                            <canvas width="320" height="320" class="canvas"></canvas>
+                            <div class="faces"></div>
+                        </div>
+                    </div>
+    
+                <div class="camera-modal">
+                    <video autoplay width="500" height="375"></video>
+                    <a class="btn capture" href="#">Capture</a>
+                </div>
+            </div>        
+        </div>
+
+        <div class="row galleryRow">
+            <!-- <div class="col s12 m2">
+              <div class="card">
+                <div class="card-image">
+                  <img  id="myimg" src="https://onfaith.onfaith.co/wp-content/uploads/2014/12/Tree_in_field_during_extreme_cold_with_frozen_fog-copy.jpg">
+                  <span class="card-title" style="font-size: 16px;">Image back from Database</span>
+                </div>
+              </div>
+            </div> -->
+            <!-- THIS IS WHERE NEW GALLERY DIVS GET APPENDED TOO -->
+        </div>
+
+
+        <div class="progress">
+            <div class="indeterminate"></div>
+        </div>
+
+        <footer class="page-footer">
+            <div class="container">
+                <div class="row">
+                <div class="col l6 s12">
+                    <h5 class="white-text">Footer Content</h5>
+                    <p class="grey-text text-lighten-4">You can use rows and columns here to organize your footer content.</p>
+                </div>
+                <div class="col l4 offset-l2 s12">
+                    <h5 class="white-text">Links</h5>
+                    <ul>
+                    <li><a class="grey-text text-lighten-3" href="#!">Link 1</a></li>
+                    <li><a class="grey-text text-lighten-3" href="#!">Link 2</a></li>
+                    <li><a class="grey-text text-lighten-3" href="#!">Link 3</a></li>
+                    <li><a class="grey-text text-lighten-3" href="#!">Link 4</a></li>
+                    </ul>
+                </div>
+                </div>
+            </div>
+            <div class="footer-copyright">
+                <div class="container">
+                © 2014 Copyright Text
+                <a class="grey-text text-lighten-4 right" href="#!">More Links</a>
+                </div>
+            </div>
+        </footer>
+
+
+        <script type="text/javascript">
+            
+            $(document).ready(function(){
+                $('.sidenav').sidenav();
+            });
+
+        </script>
+
+        <script src="vendor/jquery-1.8.2.min.js"></script>
+        <script src="vendor/qtip/jquery.qtip.min.js"></script>
+        <script src="vendor/rainbow/rainbow.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0-rc.2/js/materialize.min.js"></script>
+        <script src="assets/js/detect.js"></script>
+    </body>
+</html>

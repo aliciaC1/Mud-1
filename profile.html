@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+     <!--Import Google Icon Font-->
+     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+     <!-- Compiled and minified CSS -->
+     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0-rc.2/css/materialize.min.css">
+     <script
+     src="https://code.jquery.com/jquery-3.1.1.min.js"
+     integrity="sha256-hVVnYaiADRTO2PzUGmuLJr8BLUSjGIZsDYGmIJLv2b8="
+     crossorigin="anonymous"></script>
+     <link href="./assets/css/style.css" rel="stylesheet">
+    <title>Document</title>
+</head>
+<body>
+<!--heading bar--> 
+<div class ="head-nav">
+        <a href="#" class="brand-logo"><img id ="logo-img"src="./assets/images/mudlogowhite2.png"></a>
+       <ul id="slide-out" class="sidenav">
+          <li class = "user-display">  <img class="circle responsive-img" id = "profile-img" src="./assets/images/profileblank.png"> <br>
+          <h6 id ="user-name">User Name</h6>
+          <hr>
+          </li>
+          <li><a href="profile.html"><i class ="small material-icons">account_circle</i>Profile</a></li>
+          <li><a href="mood.html"><i class ="small material-icons">face</i>Today's Müd Board</a></li>
+          <li><a href="photolog.html"><i class ="small material-icons">collections</i>Photo Log</a></li>
+          <li><a href="camera.html"><i class ="small material-icons">camera_alt</i>Camera</a></li>
+          <li><a href="settings.html">  <i class="small material-icons">settings</i> Settings</a></li>
+          <li><a href="about.html"><i class="small material-icons">info_outline</i>About Us</a></li>
+          <li><a href="index.html"><i class="small material-icons">clear</i>Log Out</a></li>
+          <li><img id ="logo-sideimg" src="./assets/images/mudlogowhite2.png"></li>
+       </ul>
+       <a href="#" data-target="slide-out" class="sidenav-trigger show-on-large btn-floating pulse"><i class="material-icons">menu</i></a>
+  </div> 
+<!--Body Content-->
+<div class="container">
+<h1>Profile</h1>
+<li class = "user-display"><img class="circle responsive-img" id = "profile-img" src="./assets/images/profileblank.png">
+<h2>User Name</h2>
+<hr>
+<p>Name</p>
+<p>Today's Mood: </p>
+<p>Mood in Summary:</p>
+<P>Member Since:</P>
+</div>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <!-- Compiled and minified JavaScript -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0-rc.2/js/materialize.min.js"></script>   
+    <script src="./assets/js/mood.js"></script>  
+</body>
+</html>

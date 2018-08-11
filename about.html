@@ -1,0 +1,300 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="shortcut icon" type="image/png" href="./assets/images/mudlogoblkwhite.png">
+     <!--Import Google Icon Font-->
+     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+     <script src="https://use.fontawesome.com/fc6b1f5629.js"></script>
+     <!-- Compiled and minified CSS -->
+     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0-rc.2/css/materialize.min.css">
+     <script src="https://code.jquery.com/jquery-3.1.1.min.js" integrity="sha256-hVVnYaiADRTO2PzUGmuLJr8BLUSjGIZsDYGmIJLv2b8=" crossorigin="anonymous"></script>
+     <link href="./assets/css/style.css" rel="stylesheet">
+    <title>Document</title>
+</head>
+<body>
+<!--heading bar--> 
+<div class ="head-nav">
+    <a href="#" class="brand-logo"><img id ="logo-img"src="./assets/images/mudlogowhite2.png"></a>
+   <ul id="slide-out" class="sidenav">
+      <li class = "user-display">  <img class="circle responsive-img" id = "profile-img" src="./assets/images/profileblank.png"> <br>
+      <h6 id ="user-name">User Name</h6>
+      <hr>
+      </li>
+      <li><a href="profile.html"><i class ="small material-icons">account_circle</i>Profile</a></li>
+      <li><a href="mood.html"><i class ="small material-icons">face</i>Today's Müd Board</a></li>
+      <li><a href="photolog.html"><i class ="small material-icons">collections</i>Photo Log</a></li>
+      <li><a href="camera.html"><i class ="small material-icons">camera_alt</i>Camera</a></li>
+      <li><a href="settings.html">  <i class="small material-icons">settings</i> Settings</a></li>
+      <li><a href="about.html"><i class="small material-icons">info_outline</i>About Us</a></li>
+      <li><a href="index.html"><i class="small material-icons">clear</i>Log Out</a></li>
+      <li><img id ="logo-sideimg" src="./assets/images/mudlogowhite2.png"></li>
+   </ul>
+   <a href="#" data-target="slide-out" class="sidenav-trigger show-on-large btn-floating pulse"><i class="material-icons">menu</i></a>
+</div> 
+<img class ="movement2" src="./assets/images/3iRE.gif">
+<!--Body Content-->
+<div class="container">
+     
+        
+<div class="row">
+    <div class="col s12 m9 l10">
+      <div id="introduction" class="section scrollspy">
+            <img id ="logo-imgh1"src="./assets/images/mudlogowhite2.png">
+            <h4><STRONG>Müd : <em>/myːt/</em></STRONG></h4>
+            <h5>
+                A web application that enables users to keep a visual emotional diary of their daily emotions through photos, tags and comments.
+                We offer curated media content based on user's emotional data to offer a more interactive, unique user experience. 
+                <br>
+                <br>
+                <a href="https://aliciac1.github.io/Mud-Project1/"> <i class="fa fa-github-square" aria-hidden="true"></i> View Source Code on Github.</a>
+            </h5>
+      </div>
+
+      <div id="concept" class="section scrollspy">
+          <h4>Concept</h4>
+          <h5>Facial Recognition: </h5>
+          <h6>Use our camera feature or upload an image for us to analyze your emotional data.</h6>
+          <br>
+          <h5>Photo Log:</h5>
+          
+          <h6>Keeps a log of photos taken daily. <br> <br>
+          Allows users to view variations in their emotions and facial appearances overtime. <br> <br>
+          Search images and emotion details through different parameters such as dates, mood descriptions, keywords that will help user find patterns in emotional triggers. <br> <br>
+          Provides overview of emotional patterns over a period of time. <br><br>
+          User can download all images, or a specific selection. 
+          </h6>
+          <br>
+          <h5>Müd Board: </h5>   
+          <h6>
+          The Müd Board is an interactive mood board that acts as customizable art / journaling space for users to express emotion through adding text, images, tags, and manipulating curated content.  We suggest media content that reflects user’s emotional data results, such as spotify playlists, youtube videos, places to visit, and quotes. 
+          </h6>
+          
+      </div>
+
+      <div id="tools" class="section scrollspy">
+          <h4>Tools:</h4>
+        <div class = "row tech-cards">
+          <div class ="col s3">
+                <div class="card tech-used">
+                        <div class="card-image waves-effect waves-block waves-light">
+                          <img class="activator" id ="faceplus-logo" src="./assets/images/face++logo.jpeg">
+                        </div>
+                        <div class="card-content">
+                          <span class="card-title activator grey-text text-darken-4">Face++ API<i class="material-icons right">more_vert</i></span>
+                          <p><a href="https://www.faceplusplus.com/">Website</a></p>
+                        </div>
+                        <div class="card-reveal">
+                          <span class="card-title grey-text text-darken-4">Face++ API<i class="material-icons right">close</i></span>
+                          <p class="tech-info">Face Attributes <br> Used to analyze face related attributes, including age, gender and emotion.</p>
+                        </div>
+                      </div>
+          </div>
+          <div class ="col s3">
+                <div class="card tech-used">
+                        <div class="card-image waves-effect waves-block waves-light">
+                          <img class="activator" id ="yt-logo" src="./assets/images/YTLogo_old_new_animation.0.gif">
+                        </div>
+                        <div class="card-content">
+                          <span class="card-title activator grey-text text-darken-4">Youtube API<i class="material-icons right">more_vert</i></span>
+                          <p><a href="https://www.youtube.com/">Website</a></p>
+                        </div>
+                        <div class="card-reveal">
+                          <span class="card-title grey-text text-darken-4">Youtube API<i class="material-icons right">close</i></span>
+                          <p class="tech-info">Youtube Player<br> Used to add youtube player with curated playlist based on emotion results.</p>
+                        </div>
+                      </div>
+          </div>
+          <div class ="col s3">
+                <div class="card tech-used">
+                        <div class="card-image waves-effect waves-block waves-light">
+                          <img class="activator" id ="gmaps-logo" src="./assets/images/google-maps.gif">
+                        </div>
+                        <div class="card-content">
+                          <span class="card-title activator grey-text text-darken-4">Google Maps API<i class="material-icons right">more_vert</i></span>
+                          <p><a href="https://www.googlemaps.com/">Website</a></p>
+                        </div>
+                        <div class="card-reveal">
+                          <span class="card-title grey-text text-darken-4">Google Maps API<i class="material-icons right">close</i></span>
+                          <p class="tech-info">Used to suggest places through emotional data, based on user's location.</p>
+                        </div>
+                      </div>
+          </div>
+          <div class ="col s3">
+                <div class="card tech-used">
+                        <div class="card-image waves-effect waves-block waves-light">
+                          <img class="activator" id ="fireb-logo" src="./assets/images/firebaseload.gif">
+                        </div>
+                        <div class="card-content">
+                          <span class="card-title activator grey-text text-darken-4">Firebase<i class="material-icons right">more_vert</i></span>
+                          <p><a href="https://firebase.google.com/">Website</a></p>
+                        </div>
+                        <div class="card-reveal">
+                          <span class="card-title grey-text text-darken-4">Firebase<i class="material-icons right">close</i></span>
+                          <p class="tech-info">Used for user authentication and database storage of images and data. Also utilized realtime database to allow multiple html pages to access emotion data and images.</p>
+                        </div>
+                      </div>
+          </div>
+        </div>
+      </div>
+      <div id="creators" class="section scrollspy">
+          <h4>Meet the Team:</h4>
+          <div class = "row team-members">
+              <div class = "col s3">
+                  <img class="circle responsive-img creator-img"  src="./assets/images/profileblank.png"> <br>
+                    <h5>Adam Joel Chernick</h5>
+                    <p>Face++ API / Firebase <br> <i class="fa fa-github" aria-hidden="true"></i> @acher249 <br> <i class="fa fa-envelope" aria-hidden="true"></i> jchernick2010@gmail.com </p>
+              </div>
+              <div class = "col s3">
+                  <img class="circle responsive-img creator-img"  src="./assets/images/profileblank.png"> <br>
+                    <h5>Alicia Chan</h5>
+                    <p>UI Design / Google Maps API<br> <i class="fa fa-github" aria-hidden="true"></i> @aliciaC1 <br> <i class="fa fa-envelope" aria-hidden="true"></i> chan.aliciaw@gmail.com </p>
+              </div>
+              <div class = "col s3">
+                    <img class="circle responsive-img creator-img" src="./assets/images/profileblank.png"> <br>
+                    <h5>Brian Mejia</h5>
+                    <p>Media APIs / Media Content <br> <i class="fa fa-github" aria-hidden="true"></i> @Bmejia319 <br> <i class="fa fa-envelope" aria-hidden="true"></i> bmejia319@gmail.com</p>
+              </div>
+              <div class = "col s3">
+                  <img class="circle responsive-img creator-img" src="./assets/images/profileblank.png"> <br>
+                    <h5>Jordan Russell</h5>
+                    <p>Login Autentication / Firebase <br> <i class="fa fa-github" aria-hidden="true"></i> @jrussell1 <br> <i class="fa fa-envelope" aria-hidden="true"></i> jordanrussell1@gmail.com</p>
+              </div>
+          </div>
+      </div>
+    </div>
+    <div class="col hide-on-small-only m3 l2">
+      <ul class="section table-of-contents">
+        <li><a href="#introduction">Introduction Müd</a></li>
+        <li><a href="#concept">Concept</a></li>
+        <li><a href="#tools">Tools</a></li>
+        <li><a href="#creators">Meet the Team</a></li>
+      </ul>
+    </div>
+  </div>         
+</div>
+
+<!--#region Footer Content-->
+<!-- Modal Structure Terms & Conditions -->
+<div id="modal1" class="modal modal-fixed-footer">
+    <div class="modal-content">
+      <h4>Terms and Conditions</h4>
+      <!--Terms and conditions text-->
+      <p>Introduction
+        These Website Standard Terms and Conditions written on this webpage shall manage your use of our website, Müd accessible at Müd.com.
+        
+        These Terms will be applied fully and affect to your use of this Website. By using this Website, you agreed to accept all terms and conditions written in here. You must not use this Website if you disagree with any of these Website Standard Terms and Conditions.
+        
+        Minors or people below 18 years old are not allowed to use this Website.
+        
+        Intellectual Property Rights
+        Other than the content you own, under these Terms, Company Name and/or its licensors own all the intellectual property rights and materials contained in this Website.
+        
+        You are granted limited license only for purposes of viewing the material contained on this Website.
+        
+        Restrictions
+        You are specifically restricted from all of the following:
+        
+        publishing any Website material in any other media;
+        selling, sublicensing and/or otherwise commercializing any Website material;
+        publicly performing and/or showing any Website material;
+        using this Website in any way that is or may be damaging to this Website;
+        using this Website in any way that impacts user access to this Website;
+        using this Website contrary to applicable laws and regulations, or in any way may cause harm to the Website, or to any person or business entity;
+        engaging in any data mining, data harvesting, data extracting or any other similar activity in relation to this Website;
+        using this Website to engage in any advertising or marketing.
+        Certain areas of this Website are restricted from being access by you and Company Name may further restrict access by you to any areas of this Website, at any time, in absolute discretion. Any user ID and password you may have for this Website are confidential and you must maintain confidentiality as well.</p>
+    </div>
+    <div class="modal-footer">
+      <a href="#!" class="modal-close waves-effect waves-green btn-flat">Agree</a>
+    </div>
+  </div>         
+  <!-- Modal Structure Privacy Policy-->
+  <div id="modal2" class="modal modal-fixed-footer">
+      <div class="modal-content">
+        <h4>Privacy Policy</h4>
+        <p>
+          This Privacy Policy was last modified on August 11, 2018. 
+
+          Müd("us", "we", or "our") operates http://www.müd.com (the "Site"). This page informs you of our policies regarding the collection, use and disclousre of Personal Information we receive from our users of the Site. 
+          We use your Personal Information only for providing and improving the Site. By using the Site, you agree to the collection and use of information in accordance iwth this policy. 
+          <br>
+          Informaiton Collection and Use <br>
+          While using our Site, we may ask you to provie us with certain personally identifiable infomration that can be used to contact or identify you. personally identifiable information may include, but is not limited to your name ("Personal Information"). 
+          <br>
+          Log Data <br>
+          Like many site operators, we collect information that your browser sends whenever you visit our Site ("Log Data"). This Log Data may include information such as your computer's Internet 
+          Protocol ("IP") addres, browser type, browser version, the pages of our Site that you visit, the time and date of your visit, the time spent on those pages and other statistics. 
+        </p>
+      </div>
+      <div class="modal-footer">
+        <a href="#!" class="modal-close waves-effect waves-green btn-flat">Agree</a>
+      </div>
+    </div>
+  <!-- Modal Structure Contact form-->
+  <div id="modal3" class="modal modal-fixed-footer">
+      <div class="modal-content">
+        <h4>Contact</h4>
+        <div class="row">
+          <form class="col s12">
+            <div class="row">
+              <div class="input-field col s6">
+                <input placeholder="Placeholder" id="first_name" type="text" class="validate">
+                <label for="first_name">First Name</label>
+              </div>
+              <div class="input-field col s6">
+                <input id="last_name" type="text" class="validate">
+                <label for="last_name">Last Name</label>
+              </div>
+            </div>
+            <div class="row">
+              <div class="input-field col s12">
+                <input id="email" type="email" class="validate">
+                <label for="email">Email</label>
+              </div>
+            </div>          
+            <div class="row">
+              <div class="input-field col s12">
+                <textarea id="textarea1" class="materialize-textarea"></textarea>
+                <label for="textarea1">Textarea</label>
+              </div>
+        </div>
+          </form>
+        </div>     
+      </div>
+      <div class="modal-footer">
+        <a href="#!" class="modal-close waves-effect waves-green btn-flat">Submit</a>
+      </div>
+    </div>
+            
+<!--Footer-->
+<footer class="page-footer">
+    <div class="container">
+      <div class="row">
+        <div class="col l4 s12">
+          <h5 class="white-text"><img id="footer-img" src="./assets/images/mudlogowhite2.png"></h5>       
+        </div>
+        <div class="col l3 offset-l2 s12 footer-links">
+          <ul class="footer-ul">
+            <li><a class="grey-text text-lighten-3" href="./about.html">About Us</a></li>
+            <li><a class="grey-text text-lighten-3 modal-trigger" href="#modal1">Terms of Use</a></li>
+            <li><a class="grey-text text-lighten-3 modal-trigger" href="#modal2">Privacy Policy</a></li>
+            <li><a class="grey-text text-lighten-3 modal-trigger" href="#modal3">Contact</a></li>
+          </ul>        
+        </div>
+      </div>   
+      <div class="footer-copyright">      
+        Copyright © 2018 Müd Web Application & Design. All Rights Reserved.
+      </div>
+    </div>
+  </footer>
+<!--#endregion footer content-->
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <!-- Compiled and minified JavaScript -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0-rc.2/js/materialize.min.js"></script>   
+    <script src="./assets/js/mood.js"></script>     
+</body>
+</html>
