@@ -523,6 +523,28 @@ emoArray = [{
     songArray: ["https://open.spotify.com/embed?uri=spotify:playlist:37i9dQZF1DWYMvTygsLWlG", "https://open.spotify.com/embed?uri=spotify:playlist:37i9dQZF1DWSqBruwoIXkA", "https://open.spotify.com/embed?uri=spotify:playlist:37i9dQZF1DX2pSTOxoPbx9"],
     ytPlaylist: ["PL-qpR0uYyvkZAdu0mhZltbpv1eBNOCKGn"],  
     quoteArray: ['"He who angers you conquers you." -Elizabeth Kenny', '"Whatever is begun in anger ends in shame." - Benjamin Franklin', '"The opposite of anger is not calmness, its empathy." - Mehmet Oz']
+},{
+    emotion: "disgust", 
+    bckColor: '#4caf50', 
+    types:'doctor', 
+    songArray: ["https://open.spotify.com/embed?uri=spotify:playlist:3qgzMg4m5tvf16PzlPgGa9", "https://open.spotify.com/embed?uri=spotify:playlist:316Y8Uqf1iIPhMUSR2KXKT", "https://open.spotify.com/embed?uri=spotify:playlist:2AYrl9YOQkpZbBZcrlPHVc"],
+    ytPlaylist: ["PL-qpR0uYyvkZAdu0mhZltbpv1eBNOCKGn"],  
+    quoteArray: ['"All is disgust when a man leaves his own nature and does what is unfit." -Sophocles', '"All disgust is originally disgust at touching" - Walter Benjamin', '"The greatest pleasures are only narrowly separated from disgust" - Marcus Tullius Cicero']
+},{
+    emotion: "surprise", 
+    bckColor: '#ffffff', 
+    types:'art_gallery', 
+    songArray: ["https://open.spotify.com/embed?uri=spotify:playlist:5UwjklSXrLmiWWNvC6Rw3Q", "https://open.spotify.com/embed?uri=spotify:playlist:34nXSNIaXQoiGV3cDVWOSe", "https://open.spotify.com/embed?uri=spotify:playlist:5cuLY7pGp17ESkkmqaH1rR"],
+    ytPlaylist: ["PL-qpR0uYyvkZAdu0mhZltbpv1eBNOCKGn"],  
+    quoteArray: ['"Surprise is the greatest gift which life can grant us." -Boris Pasternak', '"Most things in life come as a surprise" - Lykke LI', '"The secret to humor is surprise" - Aristotle']
+},{
+    emotion: "fear", 
+    bckColor: '#111111', 
+    types:'police', 
+    songArray: ["https://open.spotify.com/embed?uri=spotify:playlist:4uCuKjOagWPUgJgXQNcBUc", "https://open.spotify.com/embed?uri=spotify:playlist:37i9dQZF1DZ06evO4burAJ", "https://open.spotify.com/embed?uri=spotify:playlist:3fQfhzslTAEIFLQwczKyDL"],
+    ytPlaylist: ["PL-qpR0uYyvkZAdu0mhZltbpv1eBNOCKGn"],  
+    quoteArray: ['"Do not let fear or insecurity stop you from trying new things. Believe in yourself. Do what you love. And most importantly be kind to others, even if you do not like them." -Stacy London', '"If you want to conquer fear, do not sit home and think about it. Go out and get busy." - Dale Carnegie', '"Courage is resistance to fear, mastery of fear, not absence of fear." - Mark Twain']
+
 }]
 
 
@@ -565,13 +587,19 @@ $( window ).on( "load", function() {
     };
 
 
- if (mainEmotion === 'happiness' || mainEmotion === 'neutral') {
+ if (mainEmotion === 'happiness') {
      showContent(0); 
- } else if (mainEmotion === 'sadness' || mainEmotion === 'surprise') {
+ } else if (mainEmotion === 'sadness') {
      showContent(1);
  } else if (mainEmotion === 'anger') {
      showContent(2);
- } 
+ } else if (mainEmotion === 'disgust'){
+      showContent(3);
+ } else if (mainEmotion === 'surprise'){
+      showContent(4);
+ } else if (mainEmotion === 'fear') {
+      showContent(5);
+ }
  
 });
 
