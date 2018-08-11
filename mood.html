@@ -9,25 +9,17 @@
      <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
      <!-- Compiled and minified CSS -->
      <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0-rc.2/css/materialize.min.css">
-     <script
-     src="https://code.jquery.com/jquery-3.1.1.min.js"
-     integrity="sha256-hVVnYaiADRTO2PzUGmuLJr8BLUSjGIZsDYGmIJLv2b8="
-     crossorigin="anonymous"></script>
-  
-     <script type="text/javascript" 
-	src="http://ajax.googleapis.com/ajax/libs/jquery/1.3.2/jquery.min.js"></script>
-<script type="text/javascript" 
-	src="http://ajax.googleapis.com/ajax/libs/jqueryui/1.7.2/jquery-ui.js"></script>
-<link rel="stylesheet" type="text/css" 
-  href="http://ajax.googleapis.com/ajax/libs/jqueryui/1.7.1/themes/base/jquery-ui.css"/>
-  <script src="https://www.gstatic.com/firebasejs/4.12.0/firebase.js"></script>
-  
-  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.2.0/css/all.css" integrity="sha384-hWVjflwFxL6sNzntih27bfxkr27PmbbK/iSvJ+a4+0owXq79v+lsFkW54bOGbiDQ" crossorigin="anonymous">
+     <script src="https://code.jquery.com/jquery-3.1.1.min.js" integrity="sha256-hVVnYaiADRTO2PzUGmuLJr8BLUSjGIZsDYGmIJLv2b8=" crossorigin="anonymous"></script>
+     <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.3.2/jquery.min.js"></script>
+    <script type="text/javascript"src="http://ajax.googleapis.com/ajax/libs/jqueryui/1.7.2/jquery-ui.js"></script>
+    <link rel="stylesheet" type="text/css" href="http://ajax.googleapis.com/ajax/libs/jqueryui/1.7.1/themes/base/jquery-ui.css"/>
+    <script src="https://www.gstatic.com/firebasejs/4.12.0/firebase.js"></script>
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.2.0/css/all.css" integrity="sha384-hWVjflwFxL6sNzntih27bfxkr27PmbbK/iSvJ+a4+0owXq79v+lsFkW54bOGbiDQ" crossorigin="anonymous">
      <link href="./assets/css/style.css" rel="stylesheet">
     <title>Müd Board</title>
 </head>
 <body>
-<!--heading bar--> 
+<!--#region heading bar--> 
 <div class ="head-nav">
         <a href="#" class="brand-logo"><img id ="logo-img"src="./assets/images/mudlogowhite2.png"></a>
        <ul id="slide-out" class="sidenav">
@@ -46,22 +38,29 @@
        </ul>
        <a href="#" data-target="slide-out" class="sidenav-trigger show-on-large btn-floating pulse"><i class="material-icons">menu</i></a>
   </div> 
+<!--#endregion heading bar-->
 <!--Body Content-->
 <div class="container">
+  <!-- background loading gif-->
    <img class="loading-gif" src="./assets/images/loadingtriangle.gif">
-<div class = "#current-mood"></div>
 
 <div class="mood-container">
- 
+
+  <!--displays currentmood-->
+    <h1 class="current-mood"></h1>
+  <!--background movement gif-->
   <img class ="movement" src="./assets/images/3iRE.gif">
-  <!-- <div class="input-field">
-  
-      <input id = "add-emo" type="submit" type="button" class="btn btn-outline-dark" value ="ADD emotion">
-    </div> -->
+          <!-- <div class="input-field">
+              <input id = "add-emo" type="submit" type="button" class="btn btn-outline-dark" value ="ADD emotion">
+            </div> -->
+  <!--add image file btn-->
+  <div class ="add-imgbtn">
+      <input type='file' id='getval' /><br/><br/>
+      <div id='clock'></div>
     <form action="#">
         <div class="file-field input-field">
-          <div class="btn">
-            <span>File</span>
+          <div class="waves-effect waves-yellow accent-3 btn-flat">
+            <span>Add Image</span>
             <input type="file" multiple>
           </div>
           <div class="file-path-wrapper">
@@ -69,17 +68,18 @@
           </div>
         </div>
       </form>
+    </div>
     <div class="resizeDiv"></div>
     <div class="date-resize">
-       <h1 id ="month">August </h1>  <hr>
-        <h1 id ="day">4th</h1>
+       <h2 id ="month"></h2>  <hr>
+        <h2 id ="day"></h2>
        <hr>
-       <h1 id ="year">2018</h1>
+       <h2 id ="year"></h2>
       </div>
-
+    <!--Show today's mood image-->
     <div id="resize-todayImg">
             <div style="text-align: center;margin: 0;height:inherit;">    
-            <img id = "todayImg" src="">
+            <img id = "todayImg" class ="responsive-img" src="./assets/images/adam.jpeg">
       </div>
     </div>
 <!--#region Google Maps-->
@@ -147,38 +147,37 @@
 </div>
 
 <!--#endregion google maps-->
-
  
-        
-
-       
+<!--spotify player-->
         <div class="music-resize">
             <div style="text-align: center;margin: 0;height:inherit;">    
         <iframe id ="spotify-player" src="https://open.spotify.com/embed?uri=spotify:playlist:37i9dQZF1DX6xZZEgC9Ubl" width="300" height="380" frameborder="0" allowtransparency="true" allow="encrypted-media"></iframe>
       </div>
       </div>
 
-
+<!--quotation-->
       <div class="quote-resize">
           <div style="text-align: center;margin: 0;height:inherit; width: inherit;"> 
             <h3 id ="quote">"Happiness radiates like the fragrance from a flower and draws all good things towards you. Maharishi Mahesh Yogi"</h3>       
       </div>
       </div>
-   
 
+<!--quotation-->      
       <div class="text-resize">   
               <form>
                   <div class="input-field">
                     <textarea id="add-comment" class="materialize-textarea"></textarea>
                     <label for="textarea1">How are you feeling today?</label>
                   </div>
-          <button id = 'add-comment' class="btn waves-effect waves-light" type="submit" name="action">Submit
-              <i class="material-icons right">send</i>
+          <button id = 'add-comment' class="waves-effect waves-yellow accent-3 btn-flat" type="submit" name="action">Save
+              <i class="material-icons right">add</i>
             </button>
               </form>         
          </div>
-
-      
+<!--moving gif image-->
+      <div class ="gif-resize">
+        <img class ="responsive-img" src="./assets/images/letters.gif">
+      </div>
 
       <div class = "tags-resize">
       <div class="chips">
@@ -203,11 +202,11 @@
         <div style="text-align: center;margin: 0;width:inherit; width: inherit;"></div>
         
       <ul id="tabs-swipe-demo" class="tabs">
-          <li class="tab col s3"><a href="#test-swipe-1">YT Player</a></li>
-          <li class="tab col s3"><a class="active" href="#test-swipe-2">Additional Videos</a></li>
+          <li class="tab col s3 black"><a href="#test-swipe-1">YT Player</a></li>
+          <li class="tab col s3 black"><a class="active" href="#test-swipe-2">Additional Videos</a></li>
         </ul>
-        <div id="test-swipe-1" class="blue"> <div class="player"><!-- YouTube player appears here --> </div></div>
-        <div id="test-swipe-2" class="red"><div class="part-two"></div></div>
+        <div id="test-swipe-1" class="blue-grey lighten-5"> <div class="player"><!-- YouTube player appears here --> </div></div>
+        <div id="test-swipe-2" class="black"><div class="part-two"></div></div>
     </div> 
 
       </div>
@@ -224,7 +223,7 @@
   <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
   <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDVhGEXnYQnjegO2k_pS1kn1kN2lw49_6U&libraries=places&callback=initMap"
   async defer></script>
-  
 <script src="./assets/js/mood.js"></script>
+<!-- <script src="./assets/js/moodFaceImage.js"></script> -->
 </body>
 </html>

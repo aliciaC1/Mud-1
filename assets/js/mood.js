@@ -290,7 +290,29 @@ function buildIWContent(place) {
 //     }
 }
 //#endregion google maps API
-
+//#region get current date 
+var d = new Date();
+document.getElementById("year").innerHTML = d.getFullYear();
+var dm = new Date();
+var months = ["January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"];
+document.getElementById("month").innerHTML = months[d.getMonth()]; 
+var day = new Date();
+document.getElementById("day").innerHTML = d.getDate();
+//#endregion current date
+//#region upload images to pg
+document.getElementById('getval').addEventListener('change', readURL, true);
+function readURL(){
+    var file = document.getElementById("getval").files[0];
+    var reader = new FileReader();
+    reader.onloadend = function(){
+        document.getElementById('clock').style.backgroundImage = "url(" + reader.result + ")";        
+    }
+    if(file){
+        reader.readAsDataURL(file);
+    }else{
+    }
+}
+//#endregion upload img to pg 
 //#region Jquery
 $(document).ready(function(){
 
@@ -342,7 +364,7 @@ $(document).ready(function(){
               class="thumb">
   
           <div class="text">
-              <h4 class="title">${title}</h4>
+              <h6 class="title">${title}</h6>
               <p class="description">${description}</p>
           </div>
           </article>`
@@ -362,10 +384,12 @@ $(document).ready(function(){
 // #endregion materalize 
 // #region Mood Board Draggable / resizeable functions 
  $('.mood-container').hide();
+
     $('.resizeDiv')
 	.draggable()
   .resizable();
-
+$('.current-mood').draggable()
+.resizable();
   // $( function() {
   //   $( ".video-resize" ).resizable({
   //     aspectRatio: 16 / 9
@@ -404,7 +428,18 @@ $(document).ready(function(){
 
   $('.tags-resize').draggable()
   .resizable();
+
+  $('.gif-resize').draggable()
+  .resizable();
+
+  $('.image-resize').draggable()
+  .resizable();
+
+  $('#resize-todayImg').draggable()
+  .resizable();
   
+  $('.add-imgbtn').draggable()
+  .resizable();
 
 // #endregion
 
@@ -520,10 +555,12 @@ $( window ).on( "load", function() {
         $('body').css('background-color', emoArray[i].bckColor);
         $('#quote').text(quoteSelect);
         $('#spotify-player').attr('src',songSelect);
+        $('.current-mood').text(mainEmotion);
         console.log(songSelect);
         emotionSearchType = emoArray[i].types;
-        // playlistId = emoArray[i].ytPlaylist;
-        // console.log(emoArray[i].ytPlaylist);
+        playlistId = emoArray[i].ytPlaylist;
+        console.log(emoArray[i].ytPlaylist);
+        console.log(playlistId);
         console.log(emoArray[i].types);
     };
 
@@ -580,6 +617,102 @@ $( window ).on( "load", function() {
   //   };
     // #endregion
 
+    (function() {
+      'use strict';
+  
+      // constants
+      var API_URL = 'https://api-us.faceplusplus.com/facepp/v3';
+      var API_KEY = 'MgfOZx5IZCuocbZ5wMmKCdZkd7P0mPhs';//填写你的APIKey
+      var API_SECRET = 'ymFeQjguF6lGA8oLlneuAHMtdhq1QSA0';//填写你的APISecret
+  
+      // Initialize Firebase
+      var config = {
+          apiKey: "AIzaSyAJL8x08SRMEYMMtn13bD69hZHjWZC_zmM",
+          authDomain: "mud-4e9fe.firebaseapp.com",
+          databaseURL: "https://mud-4e9fe.firebaseio.com",
+          projectId: "mud-4e9fe",
+          storageBucket: "mud-4e9fe.appspot.com",
+          messagingSenderId: "350533286927"
+      };
+      firebase.initializeApp(config);
+      var database = firebase.database();
+  
+  
+      var photoCounter = 0;
+      var lastImage = [];
+      var imageArrayFromDb;
+      var data;
+  
+      // on start run these functions and get all images back
+      getImageArrayFromDB();
+      setTimeout(getPicsForGallery, 1000);
+  
+      function getImageArrayFromDB(){
+  
+          //this will give back everything from the db
+          database.ref().on("value", function(snapshot) {
+              data = snapshot.val();
+              // console.log(data);
+              //this is the Array *****
+              imageArrayFromDb = data.imageArray;
+              // console.log("This is the image Array from realtime DB: ");
+              // console.log(imageArrayFromDb);
+              // console.log(data);
+  
+  
+          }, function (errorObject) {
+              console.log("The read failed: " + errorObject.code);
+          });
+      }
+      
+      function getPicsForGallery(){
+  
+          //*********************  need to put this chunk here for sequence***************** */
+          // imageArrayFromDb needs to not be undefined
+          if(imageArrayFromDb != undefined){
+              lastImage = imageArrayFromDb.slice(-1)[0];
+              console.log(lastImage);
+              console.log("Image Array in not undefined");
+          }else {
+              console.log("Image Array is undefined, so now making it an empty array");
+          };
+          //******************************************************************************** */
+  
+          if(imageArrayFromDb != undefined){
+              photoCounter = imageArrayFromDb.length;
+              console.log("The DB has this many photos: " + photoCounter);
+  
+              var storage = firebase.storage();
+              // Create a storage reference from our storage service
+              var storageRef = storage.ref();
+  
+              storageRef.child('Emotion Photos/' + lastImage).getDownloadURL().then(function(url) {
+                  var responseBase64;
+      
+                  var xhrFirebase = new XMLHttpRequest();
+                  //want to get text back not a blob
+                  xhrFirebase.responseType = 'text';
+                  xhrFirebase.onload = function(event) {
+                      //This is the base64 string back from the db
+                      responseBase64 = xhrFirebase.response;
+                      // console.log(responseBase64);
+  
+                      var image = $("#todayImg");
+                      image.attr("src", responseBase64);
+                      
+                  };
+                  xhrFirebase.open('GET', url);
+                  xhrFirebase.send();
+      
+              }).catch(function(error) {
+              // Handle any errors
+              });
+          }
+  
+  
+      }
+  
+  })();
 });
 
 

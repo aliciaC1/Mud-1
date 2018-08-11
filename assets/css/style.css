@@ -330,28 +330,31 @@ span.badge {
     background-color: #f6d29d;
     width: 500px;
     height: 500px;
-    position: fixed;
-    left: 715px;
-    top: 130px;
+    position: absolute;
+    left: 635px;
+    top: 202px;
+    /* opacity: .7; */
 }
 
 .date-resize {
     height: 400px;
     width: 200px;
     color: black;
-    text-align: right
+    text-align: right;
     z-index: 200;
-    position: fixed;
-    left: 742px;
-    top: 102px;
+    position: absolute;
+    left: 653px;
+    top: 186px;
 }
 
 .music-resize{
     border: 1px solid white;
     background-color: #f5f5f514;
-    position: fixed;
-    left: 824px;
-    top: 514px;
+    position: absolute;
+    left: 891px;
+    top: 233px;
+    width: 395px;
+    height: 397px;
 }
 
 #spotify-player{
@@ -364,44 +367,47 @@ span.badge {
     width: 480px;
     height: 500px;
     background-color: #00000052;
-    position: fixed;
-    left: 157px;
-    top: 360px;
-
+    position: absolute;
+    left: 137px;
+    top: 607px;
 }
 
 .quote-resize{
-    position: fixed;
-    left: 81px;
-    top: 126px;
+    position: absolute;
     width: 626px;
+    left: 622px;
+    top: 621px;
 }
 
 .video-resize{
     /* position: fixed; */
     width: 293px;
     height: 282px;
-    position: relative;
-    left: 988px;
-    top: 59px;
+    position: absolute;
+    left: 1301px;
+    top: 580px;
 }
 
 .tags-resize{
-    position: fixed;
-    left: 806px;
-    top: 40px;
-    width: 500px;
-    background-color: grey;
+    position: absolute;
+    background-color: #e2e2e2db;
+    padding: 10px;
+    left: 823px;
+    top: 110px;
+    width: 465px;
+    height: 53px;
 
 }
 
 .text-resize{
-    position: fixed;
-    width: 305px;
-    height: 236px;
-    left: 498px;
-    top: 565px;
-    background-color: lightblue;
+    position: absolute;
+    left: 1301px;
+    top: 109px;
+    width: 287px;
+    height: 452px;
+    padding: 10px;
+    background-color: #babebfe0;
+
 }
 
 /* #endregion mood board components */ 
@@ -806,4 +812,66 @@ span.badge {
     margin-left: 249px;
     width: 70%;
     height: 20%;
+}
+
+.gif-resize{
+    opacity: .7;
+    width: 293px; 
+    height: 263px;
+    position: absolute;
+    left: 638.75px;
+    top: 829px;
+}
+
+.add-imgbtn{
+    width: 280px;
+    height: 310px;
+    padding: 15px;
+    background-color: black;
+    left: 340px;
+    top: 196px;
+    position:absolute;
+}
+
+.current-mood{
+    left: 525px;
+    top: 55px;
+    text-transform: uppercase;
+    position: absolute;
+}
+
+#resize-todayImg{
+    width: 200px;
+    height: 200px;
+    background-color: white;
+    position: absolute;
+    opacity: 1;
+    left: 120.75px;
+    top: 138px;
+}
+
+#container {
+    max-width: 600px;
+    margin: auto;
+    text-align: center;
+    margin-top: 40px;
+}
+
+#clock{
+    background-image:url('');
+    background-size:cover;
+    background-position: center;
+    height: 250px; width: 250px;
+    border: 1px solid #bbb;
+}
+
+.tabs {
+    position: relative;
+    overflow-x: auto;
+    overflow-y: hidden;
+    height: 48px;
+    width: 100%;
+    background-color: #000;
+    margin: 0 auto;
+    white-space: nowrap;
 }
