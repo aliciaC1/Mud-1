@@ -316,74 +316,13 @@ function readURL(){
 //#region Jquery
 $(document).ready(function(){
 
-// #region Youtube API: 
-  // Global variables
-  var key = "AIzaSyCZlxos7BEyrDxX2vIhha0WM0xjNHm-DA8";
-  var playlistId = "PL-qpR0uYyvkba0mx8SOpoh-jlZOl4SvBk";
-  var URL = "https://www.googleapis.com/youtube/v3/playlistItems";
-  var options = {
-      part:"snippet",
-      key: key,
-      maxResults: 20,
-      playlistId: playlistId,
-  }
 
-  loadVids();
-
-  function loadVids() {
-      $.getJSON(URL, options, function(data) {
-          console.log(data);
-          var id = data.items[0].snippet.resourceId.videoId;
-          ytPlayer(id);
-          resultsLoop(data);
-      });
-  } 
-
-  function ytPlayer(id) {
-      $(".player").html(`
-      <iframe width="560" 
-          height="315" 
-          src="https://www.youtube.com/embed/${id}" 
-          frameborder="0" allow="autoplay; encrypted-media" allowfullscreen>
-      </iframe>`);
-  }
-
-  function resultsLoop(data) {
-      $.each(data.items, function (i, item) {
-
-          var thumb = item.snippet.thumbnails.medium.url;
-          var title = item.snippet.title;
-          var description = item.snippet.description.substring(0, 150);
-          var vid = item.snippet.resourceId.videoId;
-
-          $(".part-two").append(`
-          <article class="vids" data-key="${vid}">
-
-              <img src="${thumb}" 
-              alt="thumbnail" 
-              class="thumb">
-  
-          <div class="text">
-              <h6 class="title">${title}</h6>
-              <p class="description">${description}</p>
-          </div>
-          </article>`
-          );
-       }); 
-    }
-
-  $(".part-two").on("click", 'article', function () {
-      var newId = $(this).attr("data-key");
-      console.log(newId);
-      ytPlayer(newId);
-      });
-
-// #endregion YT API
 // #region Initalize Materliaze Jquery functions: 
   M.AutoInit();
 // #endregion materalize 
 // #region Mood Board Draggable / resizeable functions 
  $('.mood-container').hide();
+
 
     $('.resizeDiv')
 	.draggable()
@@ -400,10 +339,6 @@ $('.current-mood').draggable()
 	.draggable()
   .resizable();
 
-
-  $('.video-resize')
-	.draggable()
-  .resizable();
 
   $('.music-resize')
 	.draggable()
@@ -518,7 +453,7 @@ emoArray = [{
     quoteArray: ['“You cannot be happy unless you are unhappy sometimes.” ― Lauren Oliver, Delirium', '"Heavy hearts, like heavy clouds in the sky, are best relieved by the letting of a little water." - Christopher Morley', '"First, accept sadness. Realize that without losing, winning is not so great."-Alyssa Milano']
 },{
     emotion: "angry", 
-    bckColor: '#c81d11', 
+    bckColor: '#ff0000', 
     types:'gym', 
     songArray: ["https://open.spotify.com/embed?uri=spotify:playlist:37i9dQZF1DWYMvTygsLWlG", "https://open.spotify.com/embed?uri=spotify:playlist:37i9dQZF1DWSqBruwoIXkA", "https://open.spotify.com/embed?uri=spotify:playlist:37i9dQZF1DX2pSTOxoPbx9"],
     ytPlaylist: ["PL-qpR0uYyvkZAdu0mhZltbpv1eBNOCKGn"],  

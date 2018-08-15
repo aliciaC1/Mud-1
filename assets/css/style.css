@@ -875,3 +875,41 @@ span.badge {
     margin: 0 auto;
     white-space: nowrap;
 }
+
+
+
+.firebaseui-container {
+    background-color: transparent;
+    box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+    color: rgba(0,0,0,.87);
+    direction: ltr;
+    font: 16px Roboto,arial,sans-serif;
+    margin: 0 auto;
+    max-width: 360px;
+    overflow: visible;
+    position: relative;
+    text-align: left;
+    width: 100%;
+    margin-top: 114px;
+    margin-right: 285px;
+    margin-left: 22%;
+}
+
+.firebaseui-idp-google>.firebaseui-idp-text {
+    color: #bfbfbf;
+}
+
+.firebaseui-idp-text {
+    color: #fff;
+    display: table-cell;
+    font-size: 14px;
+    padding-left: 23px;
+    text-transform: none;
+    vertical-align: middle;
+}
+
+.firebaseui-idp-google, .firebaseui-idp-google:hover, .mdl-button.firebaseui-idp-google:active, .mdl-button.firebaseui-idp-google:focus {
+    background-color: #bfbfbf47;
+}
