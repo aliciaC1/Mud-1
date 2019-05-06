@@ -15,13 +15,14 @@ A web application enabling users to keep a unqiue visual diary of their emotions
  - We suggest media content that reflects user's emotional data results, such as spotify playlists, youtube videos, places to visit and quotes. 
 
  ## Technology: 
+ 
 > - HTML 
-  - CSS
-  - JavaScript 
-  - jQuery 
-  - Face ++ API 
-  - Google Maps API 
-  - Firebase 
+> - CSS
+> - JavaScript 
+> - jQuery 
+> - Face ++ API 
+> - Google Maps API 
+> - Firebase 
 
 
 Copyright © 2018 Müd Web Application & Design.
