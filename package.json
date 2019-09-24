@@ -28,6 +28,6 @@
     "http-errors": "^1.7.1",
     "mysql2": "^1.6.1",
     "pbkdf2-password": "^1.2.1",
-    "sequelize": "^5.7.6"
+    "sequelize": "^5.19.0"
   }
 }
